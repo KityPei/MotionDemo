@@ -14,6 +14,8 @@
 		4B777A931CEEB0BB00BF92C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B777A921CEEB0BB00BF92C1 /* Assets.xcassets */; };
 		4B777A961CEEB0BB00BF92C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B777A941CEEB0BB00BF92C1 /* LaunchScreen.storyboard */; };
 		4B777AA11CEEB0BB00BF92C1 /* MotionTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B777AA01CEEB0BB00BF92C1 /* MotionTestTests.m */; };
+		4B777AAC1CEEB2FA00BF92C1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B777AAB1CEEB2FA00BF92C1 /* AudioToolbox.framework */; };
+		4B777AAF1CEEB9F400BF92C1 /* song.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4B777AAE1CEEB9F400BF92C1 /* song.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		4B777A9C1CEEB0BB00BF92C1 /* MotionTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B777AA01CEEB0BB00BF92C1 /* MotionTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionTestTests.m; sourceTree = "<group>"; };
 		4B777AA21CEEB0BB00BF92C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B777AAB1CEEB2FA00BF92C1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4B777AAE1CEEB9F400BF92C1 /* song.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = song.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B777AAC1CEEB2FA00BF92C1 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +68,7 @@
 		4B777A7A1CEEB0BB00BF92C1 = {
 			isa = PBXGroup;
 			children = (
+				4B777AAB1CEEB2FA00BF92C1 /* AudioToolbox.framework */,
 				4B777A851CEEB0BB00BF92C1 /* MotionTest */,
 				4B777A9F1CEEB0BB00BF92C1 /* MotionTestTests */,
 				4B777A841CEEB0BB00BF92C1 /* Products */,
@@ -85,6 +91,7 @@
 				4B777A8A1CEEB0BB00BF92C1 /* AppDelegate.m */,
 				4B777A8C1CEEB0BB00BF92C1 /* ViewController.h */,
 				4B777A8D1CEEB0BB00BF92C1 /* ViewController.m */,
+				4B777AAD1CEEB9D700BF92C1 /* Resources */,
 				4B777A8F1CEEB0BB00BF92C1 /* Main.storyboard */,
 				4B777A921CEEB0BB00BF92C1 /* Assets.xcassets */,
 				4B777A941CEEB0BB00BF92C1 /* LaunchScreen.storyboard */,
@@ -109,6 +116,14 @@
 				4B777AA21CEEB0BB00BF92C1 /* Info.plist */,
 			);
 			path = MotionTestTests;
+			sourceTree = "<group>";
+		};
+		4B777AAD1CEEB9D700BF92C1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B777AAE1CEEB9F400BF92C1 /* song.wav */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +175,7 @@
 				TargetAttributes = {
 					4B777A821CEEB0BB00BF92C1 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8H8HTB2NR7;
 					};
 					4B777A9B1CEEB0BB00BF92C1 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -194,6 +210,7 @@
 				4B777A961CEEB0BB00BF92C1 /* LaunchScreen.storyboard in Resources */,
 				4B777A931CEEB0BB00BF92C1 /* Assets.xcassets in Resources */,
 				4B777A911CEEB0BB00BF92C1 /* Main.storyboard in Resources */,
+				4B777AAF1CEEB9F400BF92C1 /* song.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,10 +358,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MotionTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.drogan.pp.MotionTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -352,10 +372,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MotionTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.drogan.pp.MotionTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -402,6 +425,7 @@
 				4B777AA71CEEB0BB00BF92C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B777AA81CEEB0BB00BF92C1 /* Build configuration list for PBXNativeTarget "MotionTestTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +434,7 @@
 				4B777AAA1CEEB0BB00BF92C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

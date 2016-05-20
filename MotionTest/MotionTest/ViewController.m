@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import <AudioToolbox/AudioToolbox.h>
 @interface ViewController ()
 
 @end
@@ -24,11 +24,25 @@
     [self becomeFirstResponder];
 }
 
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
 #pragma mark -
 #pragma mark --支持摇动--
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     NSLog(@"摇动开始");
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
+//    添加手机响铃的方法
+    SystemSoundID soundId;
+    
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"song" ofType:@"wav"];
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path], &soundId);
+    
+    AudioServicesPlaySystemSound(soundId);
 }
 
 - (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
